@@ -13,3 +13,6 @@ const $addPlayerButton = document.querySelector('.addPlayer')
 const $playerList = document.querySelector('.playerList')
 // Got paragraph where we will show the summary
 const $summary = document.querySelector('.summary')
+
+// Store players
+let players = {}
