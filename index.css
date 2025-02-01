@@ -24,6 +24,27 @@ body {
     'Helvetica Neue',
     sans-serif;
 
+  min-height: 100dvh;
+
   color: royalblue;
-  background: #eefffd;
+  background: #121212;
+
+  overflow: hidden;
+}
+
+.container {
+  margin: .3rem auto;
+
+  width: 100%;
+  max-width: 400px;
+
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
 }
