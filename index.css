@@ -92,4 +92,13 @@ body {
 
     text-wrap: prettier;
   }
+
+  .x {
+    cursor: pointer;
+    padding: .4rem;
+    border: 0px;
+    border-radius: 5px;
+
+    background: black;
+  }
 }
