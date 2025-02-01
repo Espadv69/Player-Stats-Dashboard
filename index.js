@@ -64,3 +64,24 @@ function updateSummary() {
     | Rebounds: ${totalRebounds} (Avg: ${avgRebounds})
   `
 }
+
+// Function to add a new player
+$addPlayerButton.addEventListener('click', () => {
+  const name = $playerName.value.trim()
+  const pts = parseInt($points.value) || 0
+  const ast = parseInt($assists.value) || 0
+  const reb = parseInt($rebounds.value) || 0
+
+  if (name) {
+    const id = Date.now().toLocaleString()
+
+    players[id] = { name, points: pts, assits: ast, rebounds: reb }
+
+    $playerName.value = ''
+    $points.value = ''
+    $assists.value = ''
+    $rebounds.value = ''
+
+    renderPlayers()
+  }
+})
