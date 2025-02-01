@@ -48,14 +48,34 @@ body {
   }
 
   input,
-  button {
+  .addPlayer {
     padding: 1rem;
     margin: auto;
 
     width: 50%;
-    
+
     border: 2px solid royalblue;
     background: transparent;
     color: royalblue;
+  }
+
+  .addPlayer {
+    cursor: pointer;
+  }
+
+  table {
+    width: 100%;
+
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: .5rem;
+    border: 1px solid lightblue;
+  }
+
+  th {
+    background: #211c1cdd;
   }
 }
