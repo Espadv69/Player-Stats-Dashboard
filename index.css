@@ -72,10 +72,24 @@ body {
   th,
   td {
     padding: .5rem;
+
+    text-align: center;
+
     border: 1px solid lightblue;
   }
 
   th {
     background: #211c1cdd;
+  }
+
+  h2,
+  p {
+    text-align: center;
+  }
+
+  .summary {
+    width: 100%;
+
+    text-wrap: prettier;
   }
 }
