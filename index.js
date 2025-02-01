@@ -85,3 +85,10 @@ $addPlayerButton.addEventListener('click', () => {
     renderPlayers()
   }
 })
+
+// Function to remove a player
+function removePlayer(id) {
+  delete players[id]
+
+  renderPlayers()
+}
