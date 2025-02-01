@@ -32,7 +32,7 @@ function renderPlayers() {
       <td>${player.points}</td>
       <td>${player.assists}</td>
       <td>${player.rebounds}</td>
-      <td><button onclick="removePlayer('${id}')">❌</button></td>
+      <td><button class="x" onclick="removePlayer('${id}')">❌</button></td>
     `
 
     $playerList.appendChild($tr) // Appends the newly created row to the table
