@@ -92,3 +92,5 @@ function removePlayer(id) {
 
   renderPlayers()
 }
+
+renderPlayers()
