@@ -37,6 +37,30 @@ function renderPlayers() {
     $playerList.appendChild(tr)
   })
 
-  // toDo: update summary function
   updateSummary()
+}
+
+// Function that calculates and shows a general summary of the all players stats
+function updateSummary() {
+  const allStats = Object.values(players)
+
+  if (allStats.length === 0) {
+    $summary.textContent = 'No players added.'
+    return
+  }
+
+  const totalPoints = allStats.reduce((sum, p) => sum + p.points, 0)
+  const totalAssists = allStats.reduce((sum, p) => sum + p.assists, 0)
+  const totalRebounds = allStats.reduce((sum, p) => sum + p.rebounds, 0)
+
+  const avgPoints = (totalPoints / allStats.length).toFixed(1)
+  const avgAssists = (totalAssists / allStats.length).toFixed(1)
+  const avgRebounds = (totalRebounds / allStats.length).toFixed(1)
+
+  $summary.textContent = `
+    Total Players: ${allStats.length}
+    | Total Pts: ${totalPoints} (Avg: ${avgPoints})
+    | Assists: ${totalAssists} (Avg: ${avgAssists})
+    | Rebounds: ${totalRebounds} (Avg: ${avgRebounds})
+  `
 }
