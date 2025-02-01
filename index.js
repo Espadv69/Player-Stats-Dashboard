@@ -34,7 +34,7 @@ function renderPlayers() {
       <td><button onclick="removePlayer('${id}')">❌</button></td>
     `
 
-    $playerList.appendChild(tr)
+    $playerList.appendChild($tr)
   })
 
   updateSummary()
@@ -75,7 +75,7 @@ $addPlayerButton.addEventListener('click', () => {
   if (name) {
     const id = Date.now().toLocaleString()
 
-    players[id] = { name, points: pts, assits: ast, rebounds: reb }
+    players[id] = { name, points: pts, assists: ast, rebounds: reb }
 
     $playerName.value = ''
     $points.value = ''
