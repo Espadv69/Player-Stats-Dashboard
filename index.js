@@ -17,6 +17,12 @@ const $summary = document.querySelector('.summary') // Selects the paragraph ele
 // Store players
 let players = {} // Initializes an empty object to store player data
 
+document.querySelectorAll('.points, .assists, .rebounds').forEach((input) => {
+  input.addEventListener('input', () => {
+    if (input.value > 99) input.value = 99
+  })
+})
+
 // Function to update the table with the player list
 function renderPlayers() {
   // Clean body table
