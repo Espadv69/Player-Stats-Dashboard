@@ -16,3 +16,27 @@ const $summary = document.querySelector('.summary')
 
 // Store players
 let players = {}
+
+// Function to update the table with the player list
+function renderPlayers() {
+  // Clean body table
+  $playerList.innerHTML = ''
+
+  // Run each entrance of players using Object.entries
+  Object.entries(players).forEach(([id, player]) => {
+    const $tr = document.createElement('tr')
+
+    $tr.innerHTML = `
+      <td>${player.name}</td>
+      <td>${player.points}</td>
+      <td>${player.assists}</td>
+      <td>${player.rebounds}</td>
+      <td><button onclick="removePlayer('${id}')">❌</button></td>
+    `
+
+    $playerList.appendChild(tr)
+  })
+
+  // toDo: update summary function
+  updateSummary()
+}
