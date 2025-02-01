@@ -60,10 +60,10 @@ function updateSummary() {
   const avgRebounds = (totalRebounds / allStats.length).toFixed(1) // Calculates and rounds average rebounds per player
 
   $summary.textContent = `
-    Total Players: ${allStats.length} <!-- Displays the total number of players -->
-    | Total Pts: ${totalPoints} (Avg: ${avgPoints}) <!-- Displays total and average points -->
-    | Assists: ${totalAssists} (Avg: ${avgAssists}) <!-- Displays total and average assists -->
-    | Rebounds: ${totalRebounds} (Avg: ${avgRebounds}) <!-- Displays total and average rebounds -->
+    Total Players: ${allStats.length}
+    | Total Pts: ${totalPoints} (Avg: ${avgPoints})
+    | Assists: ${totalAssists} (Avg: ${avgAssists})
+    | Rebounds: ${totalRebounds} (Avg: ${avgRebounds})
   `
 }
 
