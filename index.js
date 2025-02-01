@@ -23,15 +23,16 @@ function renderPlayers() {
   $playerList.innerHTML = '' // Clears the table before rendering new player data
 
   // Loop through each entry of players using Object.entries
-  Object.entries(players).forEach(([id, player]) => { // Iterates over the players object
+  Object.entries(players).forEach(([id, player]) => {
+    // Iterates over the players object
     const $tr = document.createElement('tr') // Creates a new table row for each player
 
     $tr.innerHTML = `
-      <td>${player.name}</td> // Adds player name to the table
-      <td>${player.points}</td> // Adds player points to the table
-      <td>${player.assists}</td> // Adds player assists to the table
-      <td>${player.rebounds}</td> // Adds player rebounds to the table
-      <td><button onclick="removePlayer('${id}')">❌</button></td> // Adds a remove button for the player
+      <td>${player.name}</td> <!-- Adds player name to the table -->
+      <td>${player.points}</td> <!-- Adds player points to the table -->
+      <td>${player.assists}</td> <!-- Adds player assists to the table -->
+      <td>${player.rebounds}</td> <!-- Adds player rebounds to the table -->
+      <td><button onclick="removePlayer('${id}')">❌</button></td> <!-- Adds a remove button for the player -->
     `
 
     $playerList.appendChild($tr) // Appends the newly created row to the table
@@ -44,7 +45,8 @@ function renderPlayers() {
 function updateSummary() {
   const allStats = Object.values(players) // Extracts the values (players) from the players object
 
-  if (allStats.length === 0) { // Checks if there are no players
+  if (allStats.length === 0) {
+    // Checks if there are no players
     $summary.textContent = 'No players added.' // Displays a message if no players are added
     return
   }
@@ -58,21 +60,23 @@ function updateSummary() {
   const avgRebounds = (totalRebounds / allStats.length).toFixed(1) // Calculates and rounds average rebounds per player
 
   $summary.textContent = `
-    Total Players: ${allStats.length} // Displays the total number of players
-    | Total Pts: ${totalPoints} (Avg: ${avgPoints}) // Displays total and average points
-    | Assists: ${totalAssists} (Avg: ${avgAssists}) // Displays total and average assists
-    | Rebounds: ${totalRebounds} (Avg: ${avgRebounds}) // Displays total and average rebounds
+    Total Players: ${allStats.length} <!-- Displays the total number of players -->
+    | Total Pts: ${totalPoints} (Avg: ${avgPoints}) <!-- Displays total and average points -->
+    | Assists: ${totalAssists} (Avg: ${avgAssists}) <!-- Displays total and average assists -->
+    | Rebounds: ${totalRebounds} (Avg: ${avgRebounds}) <!-- Displays total and average rebounds -->
   `
 }
 
 // Function to add a new player
-$addPlayerButton.addEventListener('click', () => { // Adds an event listener for the Add Player button
+$addPlayerButton.addEventListener('click', () => {
+  // Adds an event listener for the Add Player button
   const name = $playerName.value.trim() // Gets the player name from input and trims whitespace
   const pts = parseInt($points.value) || 0 // Gets player points from input, defaults to 0 if not a number
   const ast = parseInt($assists.value) || 0 // Gets player assists from input, defaults to 0 if not a number
   const reb = parseInt($rebounds.value) || 0 // Gets player rebounds from input, defaults to 0 if not a number
 
-  if (name) { // Checks if player name is provided
+  if (name) {
+    // Checks if player name is provided
     const id = Date.now().toLocaleString() // Generates a unique ID based on current timestamp
 
     players[id] = { name, points: pts, assists: ast, rebounds: reb } // Adds the new player to the players object
@@ -87,7 +91,8 @@ $addPlayerButton.addEventListener('click', () => { // Adds an event listener for
 })
 
 // Function to remove a player
-function removePlayer(id) { // Removes a player by their unique ID
+function removePlayer(id) {
+  // Removes a player by their unique ID
   delete players[id] // Deletes the player from the players object
 
   renderPlayers() // Re-renders the player list after removal
