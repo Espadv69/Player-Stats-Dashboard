@@ -47,4 +47,15 @@ body {
     text-transform: uppercase;
   }
 
+  input,
+  button {
+    padding: 1rem;
+    margin: auto;
+
+    width: 50%;
+    
+    border: 2px solid royalblue;
+    background: transparent;
+    color: royalblue;
+  }
 }
