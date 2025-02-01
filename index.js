@@ -28,11 +28,11 @@ function renderPlayers() {
     const $tr = document.createElement('tr') // Creates a new table row for each player
 
     $tr.innerHTML = `
-      <td>${player.name}</td> <!-- Adds player name to the table -->
-      <td>${player.points}</td> <!-- Adds player points to the table -->
-      <td>${player.assists}</td> <!-- Adds player assists to the table -->
-      <td>${player.rebounds}</td> <!-- Adds player rebounds to the table -->
-      <td><button onclick="removePlayer('${id}')">❌</button></td> <!-- Adds a remove button for the player -->
+      <td>${player.name}</td>
+      <td>${player.points}</td>
+      <td>${player.assists}</td>
+      <td>${player.rebounds}</td>
+      <td><button onclick="removePlayer('${id}')">❌</button></td>
     `
 
     $playerList.appendChild($tr) // Appends the newly created row to the table
